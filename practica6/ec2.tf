@@ -13,7 +13,22 @@ resource "aws_instance" "public_instance" {
   # lifecycle {
   #   prevent_destroy = true
   # }
-  #Evita que se elimine este recuros
+  #Evita que se elimine este recuros por lo que nos arrojara un mensaje de error si por ejemplo quisieramos cambiarlo de subnet
+
+  # lifecycle {
+  #   ignore_changes = [
+  #     ami,
+  #     subnet_id
+  #     ]
+  # }
+  # Sirve para ignorar cambios en especificos
+
+  # lifecycle {
+  #   replace_triggered_by = [ 
+  #     replace_triggered_by
+  #    ]
+  # }
+  # Dispara un mensaje cuando se hace algun cambio al recurso señalado
 }
 
 
